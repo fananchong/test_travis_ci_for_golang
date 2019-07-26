@@ -9,9 +9,6 @@ notifications:
 env:
   - GO111MODULE=on GOPROXY=https://goproxy.io
 
-before_install:
-  - go get -v golang.org/x/lint/golint
-
 script:
   - ./make.sh lint
   - ./make.sh race
