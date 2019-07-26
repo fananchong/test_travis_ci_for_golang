@@ -14,3 +14,6 @@ script:
   - ./make.sh race
   - ./make.sh coverage
   - ./make.sh build
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
