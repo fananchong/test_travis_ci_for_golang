@@ -1,0 +1,20 @@
+language: go
+
+go:
+  - 1.12.x
+
+notifications:
+  email: false
+
+env:
+  - GO111MODULE=on
+
+before_install:
+  - go get -v golang.org/x/lint/golint
+
+script:
+  - ./make.sh lint
+  - ./make.sh race
+  - ./make.sh coverage
+  - ./make.sh build
+  
